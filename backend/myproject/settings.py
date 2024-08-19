@@ -27,7 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -37,7 +36,16 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "rest_framework",
+    "appchat",
 ]
+
+# REST_FRAMEWORK = {
+#     "DEFAULT_AUTHENTICATION_CLASSES": [
+#         # "rest_framework.authentication.SessionAuthentication",
+#         "rest_framework.permissions.IsAuthenticated",
+#     ],
+# }
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -99,6 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# APPEND_SLASH = False
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
