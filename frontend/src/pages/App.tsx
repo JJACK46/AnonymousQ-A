@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../assets/App.css";
 import { MdFileCopy, MdCheck, MdOutlineContentPaste } from "react-icons/md";
+import Button from "../components/Button";
 
 function App() {
   const [key, setKey] = useState<string | null>(null);
@@ -37,7 +38,7 @@ function App() {
     <>
       <img
         draggable={false}
-        className="w-32 mx-auto mb-5"
+        className={`w-32 mx-auto mb-5`}
         src="/safe-svgrepo-com.svg"
         alt="logo"
       />
@@ -53,13 +54,7 @@ function App() {
             {isCopied && <MdCheck />}
             {key && !isCopied && <MdFileCopy onClick={copyToClipboard} />}
           </div>
-          <button
-            onClick={generateRandomKey}
-            name="btnGenerate"
-            className="text-xl outline rounded-md outline-2 p-2 w-64"
-          >
-            Generate Room Code
-          </button>
+          <Button text="Gen Key" callback={generateRandomKey}></Button>
           <div className="flex rounded-md place-content-center items-center bg-black">
             <input
               type="text"
